@@ -269,8 +269,8 @@
 				case 'calendar': {
 					// set first day of week
 					$calendarFirstDay =
-						'weekInfo' in Intl.Locale.prototype
-							? (new Intl.Locale($selectedLanguage) as any)?.weekInfo.firstDay
+						'getWeekInfo' in Intl.Locale.prototype
+							? (new Intl.Locale($selectedLanguage) as any)?.getWeekInfo().firstDay
 							: (await import('weekstart')).getWeekStartByLocale($selectedLanguage);
 
 					// set calendar view type
